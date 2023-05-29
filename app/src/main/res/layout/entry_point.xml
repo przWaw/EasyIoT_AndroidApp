@@ -22,8 +22,10 @@
         android:background="@color/white"
         android:gravity="center"
         android:hint="@string/ip_address"
-        android:inputType="none"
-        android:autofillHints="none"/>
+        android:inputType="text"
+        android:autofillHints="none"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grey"/>
 
     <Button
         android:id="@+id/ConnectButton"
