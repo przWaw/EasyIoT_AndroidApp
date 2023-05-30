@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        style="@style/Logo.Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logoOnStartScreen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:contentDescription="@string/logoDescription"
+            app:srcCompat="@drawable/easy_iot_logo_transparent" />
+
+        <EditText
+            android:id="@+id/IpAddressInput"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.09"
+            android:autofillHints="none"
+            android:background="@color/white"
+            android:gravity="center"
+            android:hint="@string/ip_address"
+            android:inputType="phone"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+
+        <Button
+            android:id="@+id/ConnectButton"
+            style="@style/connectButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:text="@string/connect"
+            app:cornerRadius="0dp" />
+
+    </LinearLayout>
+</layout>

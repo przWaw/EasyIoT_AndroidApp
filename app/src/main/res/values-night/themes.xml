@@ -2,7 +2,12 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.EasyIoT" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/secondary_blue</item>
+        <item name="colorSecondary">@color/secondary_green</item>
+        <item name="colorAccent">@color/secondary_yellow</item>
+        <item name="background">@color/background_grey</item>
+        <item name="color">@color/white</item>
+
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
