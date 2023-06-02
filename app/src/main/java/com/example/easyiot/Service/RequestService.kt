@@ -1,6 +1,7 @@
 package com.example.easyiot.Service
 
 import com.example.easyiot.Model.FileDescription
+import com.example.easyiot.Model.ScriptOutput
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.android.Android
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -13,6 +14,7 @@ interface RequestService {
 
     suspend fun getScripts(): List<FileDescription>
     suspend fun getHostName(): String
+    suspend fun executeScript(file: FileDescription): ScriptOutput
 
 
     companion object {
