@@ -1,60 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        style="@style/General.Background">
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1"
+                style="@style/General.Background"
+                android:id="@+id/toolbar"
+                android:elevation="4dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <LinearLayout
+            style="@style/General.Background"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/leftPlaceHolder"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.05"
-                android:contentDescription="@string/logoDescription"
-                />
-            <ImageView
-                android:id="@+id/logoOnStartScreen"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="0.1"
-                android:contentDescription="@string/logoDescription"
-                app:srcCompat="@drawable/burger_menu_icon"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/leftPlaceHolder"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.05"
+                    android:contentDescription="@string/logoDescription" />
+
+                <ImageView
+                    android:id="@+id/burgerMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1"
+                    android:contentDescription="@string/logoDescription"
+                    android:src="@drawable/burger" />
+
+                <TextView
+                    android:id="@+id/hostname"
+                    style="@style/Text.Black"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.9"
+                    android:gravity="center"
+                    android:minHeight="48dp"
+                    android:text="Server Name"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="25sp"
+                    app:autoSizeStepGranularity="1sp"  />
+
+
+            </LinearLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentView"
+                android:name="com.example.easyiot.Fragments.HelloFragment"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="0.9"
-                android:text="Server Name"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:minHeight="48dp"
-                style="@style/textColor"/>
-
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/navigation" />
 
 
         </LinearLayout>
-        <TextView
-            android:id="@+id/listSize"
-            android:layout_width="match_parent"
-            android:layout_height="0sp"
-            android:layout_weight="0.9"
-            android:text="0"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:minHeight="48dp"
-            style="@style/textColor"/>
 
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/burger_menu"
+            style="@style/Menu.Burger"/>
 
-    </LinearLayout>
-
+    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

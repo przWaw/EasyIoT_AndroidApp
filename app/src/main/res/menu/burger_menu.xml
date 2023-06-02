@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item android:title="@string/scripts">
+        <menu>
+            <item
+                android:id="@+id/scripts"
+                android:icon="@drawable/python_ico"
+                android:title="@string/choose_script" />
+            <item
+                android:id="@+id/scriptDescription"
+                android:icon="@drawable/script_description"
+                android:title="@string/script_description"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/info">
+        <menu>
+            <item
+                android:id="@+id/aboutMe"
+                android:icon="@drawable/info"
+                android:title="@string/about_me"/>
+            <item
+                android:id="@+id/aboutApp"
+                android:icon="@drawable/app"
+                android:title="@string/about_app"/>
+        </menu>
+    </item>
+</menu>

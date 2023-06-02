@@ -5,9 +5,9 @@
     <color name="grey">#A5A5A5</color>
     <color name="background_grey">#2B2B2B</color>
     <color name="main_blue">#335389</color>
-    <color name="secondary_blue">#5B335389</color>
+    <color name="secondary_blue">#1B2E4C</color>
     <color name="main_green">#528D39</color>
-    <color name="secondary_green">#5C528D39</color>
+    <color name="secondary_green">#2E511F</color>
     <color name="main_yellow">#FADA0D</color>
     <color name="secondary_yellow">#5CFADA0D</color>
 </resources>

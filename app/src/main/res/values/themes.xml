@@ -5,27 +5,43 @@
         <item name="colorPrimary">@color/main_blue</item>
         <item name="colorSecondary">@color/main_green</item>
         <item name="colorAccent">@color/main_yellow</item>
-        <item name="background">@color/grey</item>
-        <item name="color">@color/black</item>
+    </style>
 
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Text.White" parent="Theme.EasyIoT">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Black" parent="Theme.EasyIoT">
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Logo.Background" parent="Theme.EasyIoT">
         <item name="android:background">?attr/colorPrimary</item>
     </style>
 
-    <style name="textColor" parent="Theme.EasyIoT">
-        <item name="android:textColor">?attr/color</item>
-    </style>
-
     <style name="General.Background" parent="Theme.EasyIoT">
-        <item name="android:background">?attr/background</item>
+        <item name="android:background">@color/white</item>
     </style>
 
-    <style name="connectButton" parent="Theme.EasyIoT">
+    <style name="Menu.Burger" parent="Theme.EasyIoT">
+        <item name="android:background">@color/white</item>
+        <item name="itemTextColor">@color/black</item>
+        <item name="itemIconTint">@color/black</item>
+    </style>
+
+    <style name="List.Icon" parent="Theme.EasyIoT">
+        <item name="android:background">@color/main_green</item>
+    </style>
+
+    <style name="List.Text" parent="Theme.EasyIoT">
+        <item name="android:background">@color/main_blue</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button.Connect" parent="Theme.EasyIoT">
         <item name="android:backgroundTint">?attr/colorSecondary</item>
     </style>
+
 
     <style name="Theme.EasyIoT" parent="Base.Theme.EasyIoT" />
 </resources>

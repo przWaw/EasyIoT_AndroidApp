@@ -14,7 +14,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.8"
             android:contentDescription="@string/logoDescription"
-            app:srcCompat="@drawable/easy_iot_logo_transparent" />
+            android:src="@drawable/easy_iot_logo_transparent" />
 
         <EditText
             android:id="@+id/IpAddressInput"
@@ -31,7 +31,7 @@
 
         <Button
             android:id="@+id/ConnectButton"
-            style="@style/connectButton"
+            style="@style/Button.Connect"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.1"

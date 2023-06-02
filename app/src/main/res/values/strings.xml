@@ -4,4 +4,19 @@
     <string name="ip_address">IP Address</string>
     <string name="logoDescription">Logo of application EasyIoT</string>
     <string name="unable_to_connect">Unable to Connect</string>
+    <string name="let_s_start">Let\'s start</string>
+    <string name="available_scripts">Scripts at Your disposal:</string>
+    <string name="creator_name">Przemko Wawrzyniak</string>
+    <string name="github_com_przwaw">github.com/przWaw</string>
+    <string name="choose_script">Choose script</string>
+    <string name="info">Info</string>
+    <string name="scripts">Scripts</string>
+    <string name="script_description">Script Description</string>
+    <string name="about_me">About me</string>
+    <string name="about_app">About App</string>
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="script_name">Script Name</string>
 </resources>

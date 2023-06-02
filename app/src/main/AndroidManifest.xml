@@ -13,6 +13,7 @@
         android:roundIcon="@drawable/easy_iot_ico_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EasyIoT"
+        android:hardwareAccelerated="false"
         tools:targetApi="31">
         <activity
             android:name=".Activity.ScriptExecutionActivity"

@@ -12,6 +12,7 @@ import kotlinx.serialization.json.Json
 interface RequestService {
 
     suspend fun getScripts(): List<FileDescription>
+    suspend fun getHostName(): String
 
 
     companion object {

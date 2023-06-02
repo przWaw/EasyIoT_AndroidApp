@@ -31,4 +31,24 @@ class RequestServiceImpl(private val client: HttpClient) : RequestService {
             throw Exception(e.message.toString())
         }
     }
+
+    override suspend fun getHostName(): String {
+        return try {
+            client.get {
+                url(URLs.getHostName)
+            }.body()
+        } catch (e: RedirectResponseException) {
+            Log.e("REQUEST_ERROR", e.response.status.description)
+            throw Exception(e.response.status.description)
+        } catch (e: ClientRequestException) {
+            Log.e("REQUEST_ERROR", e.response.status.description)
+            throw Exception(e.response.status.description)
+        } catch (e: ServerResponseException) {
+            Log.e("REQUEST_ERROR", e.response.status.description)
+            throw Exception(e.response.status.description)
+        } catch (e: Exception) {
+            Log.e("REQUEST_ERROR", e.message.toString())
+            throw Exception(e.message.toString())
+        }
+    }
 }
