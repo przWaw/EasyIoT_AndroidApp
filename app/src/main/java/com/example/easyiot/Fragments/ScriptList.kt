@@ -36,13 +36,13 @@ class ScriptList : Fragment(), RecycleViewInterface {
 
     override fun onItemClick(position: Int) {
         changeFragment(AvailableScripts.scripts[position])
-//        Toast.makeText(context, "Im clicked on position $position", Toast.LENGTH_SHORT).show()
     }
 
     private fun changeFragment(script: FileDescription){
         AvailableScripts.chosenScript = script
         val fragment = when(AvailableScripts.chosenScript.inputType){
             InputType.NO_ARGS -> NoArgsScriptExecution()
+            InputType.ON_OFF -> OnOffScriptExecution()
             else -> ScriptList()
         }
         activity?.supportFragmentManager

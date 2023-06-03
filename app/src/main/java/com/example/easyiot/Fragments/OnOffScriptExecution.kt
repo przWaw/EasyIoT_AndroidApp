@@ -21,7 +21,8 @@ import com.example.easyiot.Service.RequestService
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class NoArgsScriptExecution : Fragment() {
+class OnOffScriptExecution : Fragment() {
+
     private lateinit var service: RequestService
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,20 +34,46 @@ class NoArgsScriptExecution : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_no_args_script_execution, container, false)
+        val view = inflater.inflate(R.layout.fragment_on_off_script_execution, container, false)
         var output: ScriptOutput
         val text = view.findViewById<TextView>(R.id.outputText)
         val outputView = view.findViewById<CardView>(R.id.outputView)
-        val button = view.findViewById<Button>(R.id.executeButton)
-        button.setOnClickListener{
+        val onButton = view.findViewById<Button>(R.id.onButton)
+        val offButton = view.findViewById<Button>(R.id.offButton)
+        onButton.setOnClickListener {
             lifecycleScope.launch {
                 try {
-                    val chosenScript = AvailableScripts.chosenScript
-                    val script = ExecutableScript(chosenScript.scriptName, chosenScript.arguments?.toMutableList())
+                    val chosenScript = AvailableScripts.chosenScript.copy()
+                    val script = ExecutableScript(chosenScript.scriptName, chosenScript.arguments!!.toMutableList())
+                    Log.i("INFO", script.toString())
+                    script.arguments!![0] += " 1"
                     output = service.executeScript(script)
                     readOutput(output, text, outputView)
                 } catch (e: Exception) {
-                    Toast.makeText(context, getString(R.string.unable_to_connect), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        context,
+                        getString(R.string.unable_to_connect) + "on",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    Log.e("REQUEST_ERROR", e.message.toString())
+                }
+            }
+        }
+        offButton.setOnClickListener {
+            lifecycleScope.launch {
+                try {
+                    val chosenScript = AvailableScripts.chosenScript.copy()
+                    val script = ExecutableScript(chosenScript.scriptName, chosenScript.arguments!!.toMutableList())
+                    Log.i("INFO", script.toString())
+                    script.arguments!![0] += " 0"
+                    output = service.executeScript(script)
+                    readOutput(output, text, outputView)
+                } catch (e: Exception) {
+                    Toast.makeText(
+                        context,
+                        getString(R.string.unable_to_connect) + "off",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     Log.e("REQUEST_ERROR", e.message.toString())
                 }
             }
@@ -68,5 +95,4 @@ class NoArgsScriptExecution : Fragment() {
             text.setTextColor(Color.WHITE)
         }
     }
-
 }

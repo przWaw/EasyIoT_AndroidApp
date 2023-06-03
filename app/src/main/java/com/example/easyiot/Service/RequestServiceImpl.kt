@@ -2,6 +2,7 @@ package com.example.easyiot.Service
 
 import android.util.Log
 import com.example.easyiot.DataHoarding.URLs
+import com.example.easyiot.Model.ExecutableScript
 import com.example.easyiot.Model.FileDescription
 import com.example.easyiot.Model.ScriptOutput
 import io.ktor.client.HttpClient
@@ -58,7 +59,8 @@ class RequestServiceImpl(private val client: HttpClient) : RequestService {
         }
     }
 
-    override suspend fun executeScript(file: FileDescription): ScriptOutput {
+
+    override suspend fun executeScript(file: ExecutableScript): ScriptOutput {
         return try {
             client.post{
                 url(URLs.executScript)

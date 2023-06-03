@@ -8,7 +8,7 @@ data class FileDescription (
     val scriptName: String?,
     val inputType: InputType?,
     val requestType: RequestType?,
-    val arguments: List<String>?,
+    var arguments: List<String>?,
     val description: String?
 )
 

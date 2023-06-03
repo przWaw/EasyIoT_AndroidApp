@@ -1,5 +1,6 @@
 package com.example.easyiot.Service
 
+import com.example.easyiot.Model.ExecutableScript
 import com.example.easyiot.Model.FileDescription
 import com.example.easyiot.Model.ScriptOutput
 import io.ktor.client.HttpClient
@@ -14,7 +15,7 @@ interface RequestService {
 
     suspend fun getScripts(): List<FileDescription>
     suspend fun getHostName(): String
-    suspend fun executeScript(file: FileDescription): ScriptOutput
+    suspend fun executeScript(file: ExecutableScript): ScriptOutput
 
 
     companion object {
