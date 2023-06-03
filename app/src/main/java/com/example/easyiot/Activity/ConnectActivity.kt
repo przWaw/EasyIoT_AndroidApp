@@ -3,6 +3,7 @@ package com.example.easyiot.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.autofill.AutofillValue
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -14,6 +15,7 @@ import com.example.easyiot.Model.FileDescription
 import com.example.easyiot.R
 import com.example.easyiot.Service.RequestService
 import kotlinx.coroutines.launch
+import java.io.File
 import java.lang.Exception
 
 
@@ -29,6 +31,13 @@ class ConnectActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     AvailableScripts.scripts = service.getScripts()
+                    AvailableScripts.chosenScript = FileDescription(
+                        scriptName = null,
+                        inputType = null,
+                        requestType = null,
+                        arguments = null,
+                        description = "You have to choose a script"
+                    )
                     val goToNextActivity =
                         Intent(applicationContext, ScriptExecutionActivity::class.java)
                     startActivity(goToNextActivity)

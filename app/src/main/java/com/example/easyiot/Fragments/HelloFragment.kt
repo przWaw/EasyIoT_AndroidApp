@@ -21,7 +21,7 @@ class HelloFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentHelloBinding>(inflater,
             R.layout.fragment_hello,container,false)
-        binding.numberOfAvailableScripts.text = AvailableScripts.scripts.size.toString()
+        binding.numberOfAvailableScripts.text = AvailableScripts.scripts?.size.toString()
         return binding.root
     }
 

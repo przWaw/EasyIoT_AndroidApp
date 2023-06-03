@@ -48,9 +48,7 @@ class ScriptList : Fragment(), RecycleViewInterface {
         activity?.supportFragmentManager
             ?.beginTransaction()
             ?.replace(R.id.fragmentView, fragment)
-            ?.addToBackStack(null)
             ?.commit()
-
     }
 
 }

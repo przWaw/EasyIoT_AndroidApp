@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.example.easyiot.DataHoarding.AvailableScripts
 import com.example.easyiot.R
 
 class ScriptDescription : Fragment() {
@@ -17,8 +19,10 @@ class ScriptDescription : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_script_description, container, false)
+        val view = inflater.inflate(R.layout.fragment_script_description, container, false)
+        val text = view.findViewById<TextView>(R.id.description)
+        text.text = AvailableScripts.chosenScript.description ?: "You have to chose script first"
+        return view
     }
 
 }
